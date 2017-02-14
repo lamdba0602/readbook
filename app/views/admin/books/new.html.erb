@@ -1,0 +1,27 @@
+<h2> New Product </h2>
+
+<%= simple_form_for [:admin, @book] do |f| %>
+
+  <div class="group">
+    <%= f.input :name %>
+  </div>
+
+  <div class="group">
+    <%= f.input :owner %>
+  </div>
+
+  <div class="group">
+    <%= f.association :category %>
+  </div>
+
+  <div class="group">
+    <%= f.input :description %>
+  </div>
+
+  <div class="group">
+    <%= f.input :quantity %>
+  </div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>
