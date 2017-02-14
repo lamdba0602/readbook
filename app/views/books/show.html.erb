@@ -16,7 +16,11 @@
     <div> 数量 : <%= @book.quantity %> </div>
     <div class="book-price"> ￥10 </div>
     <div class="pull-right">
-      <%= link_to("加入购物车", add_to_basket_book_path(@book), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <% if @book.quantity.present? && @book.quantity > 0 %>
+        <%= link_to("加入漂流瓶", add_to_basket_book_path(@book), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <% else %>
+        此书已被借完，无法漂流
+      <% end %>
     </div>
   </div>
 </div>
