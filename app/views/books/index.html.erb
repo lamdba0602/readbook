@@ -1,0 +1,25 @@
+<h1>Book List </h1>
+
+<%= link_to("New Book", new_admin_book_path, class: "btn btn-primary pull-right") %>
+<table class="table table-boldered table-striped custab">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>书名</th>
+      <th>所属人</th>
+      <th>主人寄语</th>
+      <th>库存</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each_with_index do |book, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= link_to(book.name, admin_book_path(book)) %></td>
+        <td><%= book.owner %></td>
+        <td><%= book.description %></td>
+        <td><%= book.quantity  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
