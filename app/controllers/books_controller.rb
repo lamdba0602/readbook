@@ -10,7 +10,8 @@ class BooksController < ApplicationController
 
   def add_to_basket
     @book = Book.find(params[:id])
+    current_basket.add_book_to_basket(@book)
+    flash[:notice] = "成功加入漂流瓶"
     redirect_to :back
-    flash[:notice] = "测试加入书篮"
   end
 end
