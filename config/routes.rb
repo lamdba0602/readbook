@@ -13,6 +13,13 @@ Rails.application.routes.draw do
     resources :books
   end
 
-  resources :baskets
+  resources :baskets do
+    collection do
+      delete :clean
+    end
+  end
+
+  resources :basket_items
+
 
 end

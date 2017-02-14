@@ -8,4 +8,8 @@ class Basket < ApplicationRecord
      bi.quantity = 1
      bi.save
   end
+
+  def clean!
+    basket_items.destroy_all
+  end
 end
