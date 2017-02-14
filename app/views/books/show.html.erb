@@ -7,16 +7,16 @@
     <% end %>
   </div>
   <div class="col-md-6">
-    <h2> <%= @book.title %> </h2>
+    <h2> <%= @book.name %> </h2>
     <div style="height:100px;">
       <p>
         <%= @book.description %>
       </p>
     </div>
     <div> 数量 : <%= @book.quantity %> </div>
-    <div class="book-price"> ￥ <%= @book.price %> </div>
+    <div class="book-price"> ￥10 </div>
     <div class="pull-right">
-      <%= link_to("加入购物车", add_to_basket_book_path(@book), :class => "btn btn-primary btn-lg btn-danger") %>
+      <%= link_to("加入购物车", add_to_basket_book_path(@book), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
     </div>
   </div>
 </div>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :books do
     member do
-      post :add_to_cart
+      post :add_to_basket
     end
   end
 

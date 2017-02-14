@@ -8,7 +8,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
-  def add_to_cart
+  def add_to_basket
     @book = Book.find(params[:id])
     redirect_to :back
     flash[:notice] = "测试加入书篮"
