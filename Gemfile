@@ -41,6 +41,8 @@ gem "simple_form"
 gem "rename"
 gem "will_paginate-bootstrap"
 gem "font-awesome-rails"
+gem "carrierwave"
+gem "mini_magick"
 
 
 group :development, :test do
