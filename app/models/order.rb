@@ -5,4 +5,9 @@ class Order < ApplicationRecord
   validates :total, presence: true
   validates :user_id, presence: true
   validates :user_id, presence: true
+
+  def generate_token
+    self.token = SecureRandom.uuid
+  end
+
 end
