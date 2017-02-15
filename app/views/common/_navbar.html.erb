@@ -34,6 +34,9 @@
                             <%= link_to("Admin 选单", admin_books_path ) %>
                           </li>
                         <% end %>
+                        <li>
+                          <%= link_to("个人订单列表", account_orders_path ) %>
+                        </li>
                         <li> <%= link_to("<i class='fa fa-sign-out' aria-hidden='true'></i> logout".html_safe, destroy_user_session_path, method: :delete) %> </li>
                       </ul>
                     </li>
