@@ -1,0 +1,19 @@
+<h2> New Address </h2>
+
+<%= simple_form_for [:account, @address] do |f| %>
+
+  <div class="group">
+    <%= f.input :real_name %>
+  </div>
+
+  <div class="group">
+    <%= f.input :phone_number %>
+  </div>
+
+  <div class="group">
+    <%= f.input :address_info %>
+  </div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>

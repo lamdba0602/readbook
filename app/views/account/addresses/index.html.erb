@@ -1,0 +1,24 @@
+<h1>Address List </h1>
+
+<%= link_to("New address", new_account_address_path, class: "btn btn-primary pull-right") %>
+
+<table class="table table-boldered table-striped custab">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>姓名</th>
+      <th>电话</th>
+      <th>收货地址</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @addresses.each_with_index do |address, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= address.real_name %></td>
+        <td><%= address.phone_number %></td>
+        <td><%= address.address_info  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

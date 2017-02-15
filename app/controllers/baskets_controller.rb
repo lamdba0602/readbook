@@ -6,4 +6,8 @@ class BasketsController < ApplicationController
     redirect_to baskets_path
   end
 
+  def checkout
+    @order = Order.new
+  end
+
 end

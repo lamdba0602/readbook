@@ -12,7 +12,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
    if !current_basket.books.include?(@book)
      current_basket.add_book_to_basket(@book)
-     flash[:notice] = "你已成功将 #{@book.title} 加入购物车"
+     flash[:notice] = "你已成功将 #{@book.name} 加入购物车"
    else
      flash[:warning] = "你的购物车内已有此物品"
    end

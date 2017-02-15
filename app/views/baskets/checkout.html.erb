@@ -1,0 +1,46 @@
+<div class="row">
+   <div class="col-md-12">
+    <h2> 购物明细 </h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th width="80%">商品明细</th>
+          <th>运费</th>
+          <th>数量</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_basket.basket_items.each do |basket_item| %>
+          <tr>
+            <td>
+              <%= link_to(basket_item.book.name, book_path(basket_item.book)) %>
+            </td>
+            <td>10</td>
+            <td><%= basket_item.quantity %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="total clearfix">
+      <span class="pull-right">
+      总结10 RMB
+      </span>
+    </div>
+    <hr>
+    <h2> 订单资讯 </h2>
+    <h4> 请选择收货地址</h4>
+    <div class="order-form">
+      <%= simple_form_for @order do |f| %>
+        <% if current_user.addresses.count == 0 %>
+          <span>尚无可用地址<%= link_to("  请新增", new_account_address_path) %></span>
+        <% else %>
+          <%= f.select :address, render_user_address(current_user)  %>
+        <% end %>
+        <div class="checkout">
+          <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
+                       data: { disable_with: "Submitting..." } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

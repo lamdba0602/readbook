@@ -22,5 +22,10 @@ Rails.application.routes.draw do
 
   resources :basket_items
 
+  resources :orders
+  
+  namespace :account do
+    resources :addresses
+  end
 
 end
