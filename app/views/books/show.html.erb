@@ -1,21 +1,23 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-6"><center>
     <% if @book.image.present? %>
       <%= image_tag(@book.image.medium.url, class: "thumbnail") %>
     <% else %>
       <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <% end %>
+    </center>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <h2> <%= @book.name %> </h2>
-    <div style="height:100px;">
-      <p>
-        <%= @book.description %>
-      </p>
+    <hr>
+    <div class="description">
+      <p><%= @book.description %></p>
     </div>
-    <div> 数量 : <%= @book.quantity %> </div>
+    <hr>
+    <div><p> 数量 : <%= @book.quantity %></p> </div>
     <div class="book-price"> ￥10 </div>
-    <div class="pull-right">
+    <hr>
+    <div class="pull-left">
       <% if @book.quantity.present? && @book.quantity > 0 %>
         <%= link_to("加入漂流瓶", add_to_basket_book_path(@book), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
       <% else %>

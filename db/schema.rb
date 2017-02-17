@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215091407) do
+ActiveRecord::Schema.define(version: 20170216033406) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "real_name"
@@ -48,10 +48,10 @@ ActiveRecord::Schema.define(version: 20170215091407) do
     t.string   "owner"
     t.integer  "category_id"
     t.text     "description"
-    t.boolean  "status"
+    t.boolean  "status",      default: false
     t.integer  "quantity"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "image"
   end
 

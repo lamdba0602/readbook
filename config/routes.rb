@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "books#index"
+  root "welcome#index"
 
   resources :books do
     member do
@@ -10,7 +10,12 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :books
+    resources :books do
+      member do
+        post :published
+        post :hidden
+      end
+    end
   end
 
   resources :baskets do
@@ -31,5 +36,7 @@ Rails.application.routes.draw do
   namespace :account do
     resources :orders
   end
+
+  resources :categorys
 
 end

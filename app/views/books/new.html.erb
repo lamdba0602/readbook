@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <h2> New book </h2>
+    </div>
+  </div>
+  <%= simple_form_for @book do |f| %>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <%= f.input :name, label: '书名' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <%= f.input :owner, label: '所属人' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <%= f.association :category, label: '类别' %>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <%= f.input :description, label: '主人寄语', maxlength: "100" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+      </div>
+    </div>
+  <% end %>
+</div>

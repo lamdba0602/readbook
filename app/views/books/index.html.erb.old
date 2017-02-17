@@ -1,0 +1,31 @@
+<h1>Book List </h1>
+
+<%= link_to("借书给我", new_book_path, class: "btn btn-primary pull-right") %>
+<table class="table table-boldered table-striped custab">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th width="220">Book pic</th>$
+      <th>书名</th>
+      <th>库存</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each_with_index do |book, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td>
+          <%= link_to book_path(book) do %>
+            <% if book.image.present? %>
+              <%= image_tag(book.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
+        <td><%= link_to(book.name, book_path(book)) %></td>
+        <td><%= book.quantity  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -43,6 +43,22 @@ class Admin::BooksController < ApplicationController
     end
   end
 
+  def published
+    @book = Book.find(params[:id])
+    @book.publish!
+    redirect_to admin_books_path
+    else
+    
+  end
+
+  def hidden
+    @book = Book.find(params[:id])
+    @book.hidden!
+    redirect_to admin_books_path
+    else
+  
+  end
+
   private
   
   def book_params
