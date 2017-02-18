@@ -130,6 +130,25 @@
     <img src="https://s3-ap-northeast-1.amazonaws.com/bainiao/bainiao/tangjian4.jpg" class="img-responsive" alt="Responsive image">
   </div>
 </div>
+<div class="row">
+  <div class="col-md-6 story-photo">
+    <img src="https://s3-ap-northeast-1.amazonaws.com/bainiao/bainiao/tangjian30.jpg" class="img-responsive" alt="Responsive image">
+  </div>
+  <div class="col-md-6 story-photo">
+    <center><h1 > 他徒步从广州走到深圳</h1></center>
+    <div class="back-content">
+      <p > 拿着这块牌子</p>
+      <hr>
+      <p>一路走一路借书</p>
+      <p>学校旁</p>
+      <p>公路上</p>
+      <p>饭馆里</p>
+      <p>历时5天</p>
+      <p>150公里，为的是什么？</p>
+    </div>
+      <a class="back-story", href="https://mp.weixin.qq.com/s?__biz=MzIxODUxMDM5MQ==&mid=2247483848&idx=1&sn=1673d295b1d80bdc92c1459d975569a8&chksm=97e82490a09fad86679ecb2fcf16bd687d17ac6c22245e08869edf9daa3a76e91c56c136b8e2&mpshare=1&scene=1&srcid=0216YqpB8Gn96RNzX7Ho9ecz&key=2c28c9c8a28bb815df3143101204d211d238e22e2fcc92c442db87627458ef68a0dccb986c9da978aa476ed6ba73f3f2eed1f609f5099c3771d4db81f138c106273acfb3d83a8242eecc47a6499f4b77&ascene=0&uin=MTgxMDA0NjY4NA%3D%3D&devicetype=iMac+MacBookPro11%2C3+OSX+OSX+10.10.2+build(14C109)&version=12010310&nettype=WIFI&fontScale=100&pass_ticket=THKbzR7JfFUMO9KH0oHzlIkJv6Mq0W8g25YavNY6rs3cnaizBtgSrnAs7k7K6a%2BB", target="_blank">背后的故事 </a>
+  </div>
+</div>
 <hr>
 <div class="row">
   <center><h1>开始你的图书漂流之旅吧</h1></center>
@@ -196,7 +215,7 @@
                     </a>
                 </div>
                 <div class="panel-footer">
-                    <h4><a href="#" title="Sports Portfolio" title="Sports">艺术</a></h4>  
+                    <h4><a href="#" title="Sports Portfolio" title="Sports">艺术</a></h4>
                     <span class="pull-right">
                         <i id="like3" class="glyphicon glyphicon-thumbs-up"></i> <div id="like3-bs3"></div>
                         <i id="dislike3" class="glyphicon glyphicon-thumbs-down"></i> <div id="dislike3-bs3"></div>
@@ -220,7 +239,7 @@
                     </a>
                 </div>
                 <div class="panel-footer">
-                    <h4><a href="#" title="People Portfolio">科学</a></h4>  
+                    <h4><a href="#" title="People Portfolio">科学</a></h4>
                     <span class="pull-right">
                         <i id="like4" class="glyphicon glyphicon-thumbs-up"></i> <div id="like4-bs3"></div>
                         <i id="dislike4" class="glyphicon glyphicon-thumbs-down"></i> <div id="dislike4-bs3"></div>
@@ -229,7 +248,7 @@
               </div>
               </div>
             </div>
-        </article>                                              
+        </article>
         <article class="col-xs-12 col-sm-6 col-md-4">
           <div class="row">
             <div class="col-md-10 col-sm-offset-1">
@@ -241,7 +260,7 @@
                     </a>
                 </div>
                 <div class="panel-footer">
-                    <h4><a href="#" title="People Portfolio">历史</a></h4>  
+                    <h4><a href="#" title="People Portfolio">历史</a></h4>
                     <span class="pull-right">
                         <i id="like5" class="glyphicon glyphicon-thumbs-up"></i> <div id="like5-bs3"></div>
                         <i id="dislike5" class="glyphicon glyphicon-thumbs-down"></i> <div id="dislike5-bs3"></div>
@@ -250,7 +269,7 @@
               </div>
               </div>
             </div>
-        </article>                                              
+        </article>
         <article class="col-xs-12 col-sm-6 col-md-4">
           <div class="row">
             <div class="col-md-10 col-sm-offset-1">
@@ -262,7 +281,7 @@
                     </a>
                 </div>
                 <div class="panel-footer">
-                    <h4><a href="#" title="People Portfolio">心理</a></h4>  
+                    <h4><a href="#" title="People Portfolio">心理</a></h4>
                     <span class="pull-right">
                         <i id="like6" class="glyphicon glyphicon-thumbs-up"></i> <div id="like6-bs3"></div>
                         <i id="dislike6" class="glyphicon glyphicon-thumbs-down"></i> <div id="dislike6-bs3"></div>
@@ -271,7 +290,7 @@
             </div>
             </div>
           </div>
-        </article>                                              
+        </article>
       </div>
 </section>
 </div>
@@ -296,20 +315,20 @@ Credits: Bootstrap, jQuery, TouchSwipe, Animate.css, FontAwesome
 
 $('#bootstrap-touch-slider').bsTouchSlider();
 
-$(document).ready(function() {              
-    $('i.glyphicon-thumbs-up, i.glyphicon-thumbs-down').click(function(){    
+$(document).ready(function() {
+    $('i.glyphicon-thumbs-up, i.glyphicon-thumbs-down').click(function(){
         var $this = $(this),
-        c = $this.data('count');    
+        c = $this.data('count');
         if (!c) c = 0;
         c++;
         $this.data('count',c);
         $('#'+this.id+'-bs3').html(c);
-    });      
+    });
     $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
         event.preventDefault();
         $(this).ekkoLightbox();
-    });                                        
-}); 
+    });
+});
 
 
 </script>
