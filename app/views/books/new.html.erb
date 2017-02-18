@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <h2> New book </h2>
+      <h2 style="text-align:center"> 借书给我 </h2>
     </div>
   </div>
   <%= simple_form_for @book do |f| %>
@@ -12,7 +12,7 @@
     </div>
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-        <%= f.input :owner, label: '所属人' %>
+        <%= f.input :owner, label: '您的名字（我们会记得您的）' %>
       </div>
     </div>
     <div class="row">
@@ -28,7 +28,7 @@
     </div>
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-        <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+        <%= f.button :submit, "完成" , class:"btn-primary btn-book-submit", data: { disable_with: "Submitting..." }%>
       </div>
     </div>
   <% end %>

@@ -16,7 +16,8 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
 
     if @book.save
-      redirect_to books_path
+      redirect_to "/"
+      flash[:notice] = "提交成功，收到书后我们会及时上架，到时候会通知您哦"
     else
       render :new
     end

@@ -9,13 +9,14 @@
   </div>
   <div class="col-md-4">
     <h2> <%= @book.name %> </h2>
+    <h3> 所属人: <%= @book.owner %>  </h3>
     <hr>
     <div class="description">
       <p><%= @book.description %></p>
     </div>
     <hr>
     <div><p> 数量 : <%= @book.quantity %></p> </div>
-    <div class="book-price"> ￥10 </div>
+    <div class="book-price"> ￥10 (运费)</div>
     <hr>
     <div class="pull-left">
       <% if @book.quantity.present? && @book.quantity > 0 %>
