@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-category = [ "文学", "科学", "小说", "心理学", "艺术" ]
+category = ["历史", "文学", "科学", "小说", "心理学", "艺术" ]
 
 category.each do |f|
   Category.create!(name: f)
