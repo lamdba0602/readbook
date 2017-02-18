@@ -17,6 +17,10 @@ body{
   background: #dff0d8;
 }
 
+.story-photo{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 .back-content{
   text-align: center;
   font-size:20px;
@@ -479,4 +483,8 @@ body{
 
 .container-main{
   min-height: calc( 100% - 195px )
+}
+
+.title-book{
+  margin-top:10px;
 }
