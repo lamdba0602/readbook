@@ -6,7 +6,6 @@
 .glyphicon { margin-right:5px; }
 .thumbnail
 {
-    margin-bottom: 20px;
     padding: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
@@ -29,7 +28,7 @@
 {
     margin-right: 10px;
 }
-.item.list-group-item .thumbnail
+.item.list-group-item 
 {
     margin-bottom: 0px;
 }
@@ -67,9 +66,6 @@
   margin-bottom: 20px;
 }
 
-.thumbnail{
-  align: center;
-}
 
 .btn-book-submit{
   align: center;

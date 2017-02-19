@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :new, :add_to_basket]
 
   def index
     @books = Book.published.recent

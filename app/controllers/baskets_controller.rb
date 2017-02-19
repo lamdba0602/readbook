@@ -1,4 +1,5 @@
 class BasketsController < ApplicationController
+  before_action :authenticate_user!
 
   def clean
     current_basket.clean!

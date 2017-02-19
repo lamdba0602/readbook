@@ -7,6 +7,11 @@ Rails.application.routes.draw do
     member do
       post :add_to_basket
     end
+    collection do
+      get :peoples
+      get :story
+      get :walks
+    end
   end
 
   namespace :admin do
