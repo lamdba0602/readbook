@@ -1,3 +1,47 @@
+<div class="container">
+    <div class="well well-sm">
+        <strong>Book display</strong>
+        <div class="btn-group">
+            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                class="glyphicon glyphicon-th"></span>Grid</a>
+        </div>
+    </div>
+    <div id="books" class="row list-group">
+        <% @books.each do |book| %> 
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+                <% if book.image.present? %>
+                  <%= link_to image_tag(book.image_url, :alt => "book image", :class =>"group list-group-image img-responsive", :style => "height:400px; width:400px"), book_path(book) %>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/250x400", :alt => "book image", :class =>"group list-group-image img-responsive", :style => "height:400px; width:400px"), book_path(book) %>
+                <% end %>
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        <%= book.name  %></h4>
+                    <hr>
+                    <p class="group inner list-group-item-text">
+                     主人寄语: <%= book.description  %></p>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                            库存  <%= book.quantity  %></p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
 
+<script>
+$(document).ready(function() {
+    $('#list').click(function(event){event.preventDefault();$('#books .item').addClass('list-group-item');});
+    $('#grid').click(function(event){event.preventDefault();$('#books .item').removeClass('list-group-item');$('#books .item').addClass('grid-group-item');});
+});
+</script>
 
-<iframe id="wrapper-body" name="wrapper-body" onload="remove_loading()"  src="http://mp.weixin.qq.com/s?__biz=MzI1NjU0NTQ4MA==&mid=2247483663&idx=2&sn=14a0afcf257af3003059337fc4afe958&chksm=ea2446a8dd53cfbe6eb3b8bc32dbce63e88ba4700b50da98a1ab698dcc99b961d50a99f3dced&mpshare=1&scene=25&srcid=1124TDEIyVmHI9Zo2Dl98C61#wechat_redirect" width="100%" height="100%" scrolling="auto"> </iframe>
